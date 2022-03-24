@@ -4,14 +4,14 @@ import com.crudjava.crudspring.model.Estabelecimento;
 
 
 public class EstabelecimentoDTO {
+  //#region Atributos
   private Long id;
-
   private String nome;
-
   private String endereco;
-
   private String telefone;
+  //#endregion
 
+  //#region Getters and Setters
   public Long getId() {
     return id;
   }
@@ -43,6 +43,7 @@ public class EstabelecimentoDTO {
   public void setTelefone(String telefone) {
     this.telefone = telefone;
   }
+  //#endregion
 
   public Estabelecimento toEntity() {
     Estabelecimento entity = new Estabelecimento();

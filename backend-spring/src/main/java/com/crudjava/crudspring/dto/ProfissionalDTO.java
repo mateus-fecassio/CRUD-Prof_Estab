@@ -6,19 +6,16 @@ import java.util.Set;
 import com.crudjava.crudspring.model.Profissional;
 
 public class ProfissionalDTO {
-
+  //#region Atributos
   private Long id;
-
   private String nome;
-
   private String endereco;
-
   private String celular;
-
   private String telefone;
-
   private String funcao;
+  //#endregion
 
+  //#region Getters and Setters
   public Long getId() {
     return id;
   }
@@ -74,6 +71,8 @@ public class ProfissionalDTO {
   public void setEstabelecimentos(Set<EstabelecimentoDTO> estabelecimentos) {
     this.estabelecimentos = estabelecimentos;
   }
+  //#endregion
+
 
   private Set<EstabelecimentoDTO> estabelecimentos = new HashSet<>();
 

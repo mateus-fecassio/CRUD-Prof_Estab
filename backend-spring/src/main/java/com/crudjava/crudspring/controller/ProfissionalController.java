@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/profissionais")
-
 public class ProfissionalController {
 
   private ProfissionalController(ProfissionalRepository profissionalRepository) {
@@ -28,11 +27,20 @@ public class ProfissionalController {
 
   private final ProfissionalRepository profissionalRepository;
 
+  /**
+   * Método para listar todos os profissionais cadastrados.
+   * @return Lista com todo os profissionais cadastrados utilizando método do JpaRepository de listar tudo.
+   */
   @GetMapping
   public List<Profissional> listar() {
     return profissionalRepository.findAll();
   }
 
+  /**
+   * Método para inserção de um novo profissional.
+   * @param estabelecimentoDTO ,um objeto DTO que será manipulado, convertido para uma entidade e então armazenado no banco.
+   * @return Resposta de sucesso na criação.
+   */
   @PostMapping
   public ResponseEntity<ProfissionalDTO> criar(@RequestBody ProfissionalDTO profissionalDTO) {
     Profissional profissional = profissionalDTO.toEntity();
@@ -40,6 +48,11 @@ public class ProfissionalController {
     return new ResponseEntity<>(profissional.toDTO(), HttpStatus.CREATED);
   }
 
+  /**
+   * Método para excluir um profissional dado um determinado id.
+   * @param id do profissional a ser excluído.
+   * @return Resposta sobre o sucesso ou não da exclusão.
+   */
   @DeleteMapping(path = { "/{id}" })
   public ResponseEntity<Long> excluir(@PathVariable long id) {
     Optional<Profissional> profissional = profissionalRepository.findById(id);

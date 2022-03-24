@@ -18,7 +18,8 @@ import com.crudjava.crudspring.dto.ProfissionalDTO;
 @Entity
 public class Profissional {
 
-  @Id
+  //#region Atributos
+  @Id //definição da chave primária a ser usada, com o tipo de geração incremental gerenciada pelo próprio SGBD 
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
@@ -36,7 +37,9 @@ public class Profissional {
 
   @Column(length = 50, nullable = false)
   private String funcao;
-  
+  //#endregion
+
+  //#region Getters and Setters
   public Long getId() {
     return id;
   }
@@ -92,10 +95,12 @@ public class Profissional {
   public void setEstabelecimentos(Set<Estabelecimento> estabelecimentos) {
     this.estabelecimentos = estabelecimentos;
   }
+  //#endregion
 
-  @ManyToMany(fetch = FetchType.LAZY)
-  @JoinTable(name = "profissional_estabelecimento", joinColumns = {
-      @JoinColumn(name = "profissional_id") }, inverseJoinColumns = { @JoinColumn(name = "estabelecimento_id") })
+
+  @ManyToMany(fetch = FetchType.LAZY) //relação muitos para muitos, visto que um profissional pode estar associado a vários estabelecimentos.
+  @JoinTable(name = "profissional_estabelecimento", joinColumns = { 
+      @JoinColumn(name = "profissional_id") }, inverseJoinColumns = { @JoinColumn(name = "estabelecimento_id") }) //criação de uma tabela temporária para guardar essa relação
   private Set<Estabelecimento> estabelecimentos = new HashSet<>();
 
   public ProfissionalDTO toDTO() {

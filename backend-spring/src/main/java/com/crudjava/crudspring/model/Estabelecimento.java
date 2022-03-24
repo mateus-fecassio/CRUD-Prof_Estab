@@ -11,7 +11,8 @@ import com.crudjava.crudspring.dto.EstabelecimentoDTO;
 @Entity
 public class Estabelecimento {
 
-  @Id
+  //#region Atributos
+  @Id //definição da chave primária a ser usada, com o tipo de geração incremental gerenciada pelo próprio SGBD 
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
@@ -23,7 +24,10 @@ public class Estabelecimento {
 
   @Column(length = 11, nullable = false)
   private String telefone;
+  //#endregion
 
+
+  //#region Getters and Setters
   public Long getId() {
     return id;
   }
@@ -55,6 +59,7 @@ public class Estabelecimento {
   public void setTelefone(String telefone) {
     this.telefone = telefone;
   }
+  //#endregion
 
   public EstabelecimentoDTO toDTO() {
     EstabelecimentoDTO dto = new EstabelecimentoDTO();
