@@ -10,7 +10,7 @@ As principais tecnologias utilizadas foram:
 * [Maven 3.8.5](https://maven.apache.org/download.cgi). Caso esteja no Windows [este](https://dicasdejava.com.br/como-instalar-o-maven-no-windows/) tutorial de instalação poderá te ajudar;
 * H2 (Banco de Dados em tempo de execução).
 
-## Build e Execução do Back-End
+### Build e Execução do Back-End
 * Instalação de Dependências: `mvn clean install`;
 * Rodar o Projeto na porta 8080.
 
@@ -21,7 +21,7 @@ As principais tecnologias utilizadas foram:
 * NPM 8.5.0;
 * [Angular Material](https://material.angular.io/).
 
-## Build e Execução do Back-End
+### Build e Execução do Front-End
 * Instalação de Dependências: `npm install`;
 * Rodar o Projeto com `npm start`;
 * Navegar para `http://localhost:4200/` em algum WebBrowser para visualização do projeto. A aplicação será automaticamente recarregada se qualquer alteração for feita nos arquivos fonte.
