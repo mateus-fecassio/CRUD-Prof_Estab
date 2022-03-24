@@ -64,6 +64,6 @@ export class ListaComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     // Poderia filtrar usando Object.keys(this.estabelecimentos).join(" ").toLowerCase() ...
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.dataSource.filter = filterValue.trim().toLowerCase(); //filtra qualquer palavra na busca
   }
 }

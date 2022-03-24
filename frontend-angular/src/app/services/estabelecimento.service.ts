@@ -12,6 +12,7 @@ export class EstabelecimentoService {
 
   constructor(private _httpClient: HttpClient) { }
 
+  // SERVIÇOS DESENVOLVIDOS
   listar(): Observable<any> {
     return this._httpClient.get(`${environment.apiUrl}/estabelecimentos`);
   }
