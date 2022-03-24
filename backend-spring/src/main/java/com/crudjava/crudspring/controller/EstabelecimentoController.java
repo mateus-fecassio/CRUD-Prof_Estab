@@ -17,12 +17,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import lombok.AllArgsConstructor;
+
 
 @RestController
 @RequestMapping("/api/estabelecimentos")
-@AllArgsConstructor
+
 public class EstabelecimentoController {
+  private EstabelecimentoController(EstabelecimentoRepository estabelecimentoRepository) {
+    this.estabelecimentoRepository = estabelecimentoRepository;
+  }
+
   private final EstabelecimentoRepository estabelecimentoRepository;
 
   @GetMapping

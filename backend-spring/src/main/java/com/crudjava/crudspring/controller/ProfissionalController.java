@@ -17,13 +17,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import lombok.AllArgsConstructor;
-
 @RestController
 @RequestMapping("/api/profissionais")
-@AllArgsConstructor // Instancia os atributos automaticamente, sem necessidade de criar um
-                    // construtor
+
 public class ProfissionalController {
+
+  private ProfissionalController(ProfissionalRepository profissionalRepository) {
+    this.profissionalRepository = profissionalRepository;
+  }
 
   private final ProfissionalRepository profissionalRepository;
 

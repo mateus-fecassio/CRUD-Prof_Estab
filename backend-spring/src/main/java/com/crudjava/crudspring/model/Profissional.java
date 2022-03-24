@@ -15,9 +15,6 @@ import javax.persistence.JoinColumn;
 
 import com.crudjava.crudspring.dto.ProfissionalDTO;
 
-import lombok.Data;
-
-@Data
 @Entity
 public class Profissional {
 
@@ -39,6 +36,62 @@ public class Profissional {
 
   @Column(length = 50, nullable = false)
   private String funcao;
+  
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public String getNome() {
+    return nome;
+  }
+
+  public void setNome(String nome) {
+    this.nome = nome;
+  }
+
+  public String getEndereco() {
+    return endereco;
+  }
+
+  public void setEndereco(String endereco) {
+    this.endereco = endereco;
+  }
+
+  public String getCelular() {
+    return celular;
+  }
+
+  public void setCelular(String celular) {
+    this.celular = celular;
+  }
+
+  public String getTelefone() {
+    return telefone;
+  }
+
+  public void setTelefone(String telefone) {
+    this.telefone = telefone;
+  }
+
+  public String getFuncao() {
+    return funcao;
+  }
+
+  public void setFuncao(String funcao) {
+    this.funcao = funcao;
+  }
+
+  public Set<Estabelecimento> getEstabelecimentos() {
+    return estabelecimentos;
+  }
+
+  public void setEstabelecimentos(Set<Estabelecimento> estabelecimentos) {
+    this.estabelecimentos = estabelecimentos;
+  }
 
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "profissional_estabelecimento", joinColumns = {
