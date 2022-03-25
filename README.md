@@ -19,6 +19,7 @@ As principais tecnologias utilizadas foram:
 As principais tecnologias utilizadas foram:
 * [Node 16.14.2](https://nodejs.org/en/download/);
 * NPM 8.5.0;
+* Angular CLI: 13.3.0;
 * [Angular Material](https://material.angular.io/).
 
 ### Build e Execução do Front-End
