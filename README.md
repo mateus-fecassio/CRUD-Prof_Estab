@@ -1,6 +1,6 @@
 # CRUD Profissionais e Estabelecimentos
 
-Esse projeto foi desenvolvido com o objetivo de empregar os conhecimentos no desenvolvimento de uma aplicação, utilizando na parte do back-end o Java com o framework Spring. No front-end foi utilizado o Angular.
+Esse projeto foi desenvolvido com o objetivo de empregar os conhecimentos no desenvolvimento de uma aplicação, utilizando na parte do back-end o Java com o framework Spring. No front-end foi utilizado o Angular. A ideia principal do projeto é o de implementar um CRUD de Profissionais da Saúde e Estabelecimentos de Saúde, levando em consideração que um profissional pode estar em mais de um estabelecimento.
 
 
 ## Back-End (Spring)
